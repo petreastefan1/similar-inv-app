@@ -70,20 +70,43 @@ body{
     background-color: aliceblue;
 }
 
-
-
-
-
-
-
-
-
-/* .invitees-container{
-    border:2px solid red;
-    background-color: #FFF;
+.invitees-container{
     display:grid;
-    grid-template-columns: repeat( auto-fit, minmax(150px, 360px) );
-    grid-gap: 96px; 
+    grid-template-columns: repeat( auto-fit, minmax(150px, 160px) );
+    gap:20px;
+    padding:20px;
+    background-color: aliceblue;
+}
 
-    
-} */
+.card-container{
+    box-shadow: 1px 1px 3px 1px rgb(141, 89, 190);
+    padding:10px;
+    background-color: #FFF;
+
+}
+
+.checkbox-label-container{
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+    gap:3px;
+    padding-bottom: 20px;
+
+}
+
+.card-buttons{
+    display:flex;
+    gap:10px;
+}
+.button-style{
+    border:none;
+    border-radius: 5px;
+    background-color: rgb(63, 34, 192);
+    color:#FFF;
+
+}
+
+
+
+
+
