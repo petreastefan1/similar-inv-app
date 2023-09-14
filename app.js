@@ -48,26 +48,6 @@ function createCard(name){
     return cardContainer
 }
 
-
-submitBtn.addEventListener("click",()=>{
-
-    let newInvitee = createCard(nameInpt.value);
-    invContainer.append(newInvitee)
-
-})
-
-hideBtn.addEventListener("click",()=>{
-    if(hideBtn.checked){
-        hide()
-    }
-    else{
-        show()
-    }
-
-
-})
-
-
 function hide() {
 
 
@@ -110,3 +90,38 @@ function show() {
 
     })
 }
+
+submitBtn.addEventListener("click",()=>{
+
+    let newInvitee = createCard(nameInpt.value);
+    invContainer.append(newInvitee)
+
+})
+
+hideBtn.addEventListener("click",()=>{
+    if(hideBtn.checked){
+        hide()
+    }
+    else{
+        show()
+    }
+
+
+})
+
+
+invContainer.addEventListener("click",(e)=>{
+    let object= e.target;
+    let classes = object.classList;
+    let card = object.parentNode.parentNode
+
+    if(classes.contains("remove-btn")){
+        invContainer.removeChild(card)
+    }
+
+
+
+
+
+
+})
