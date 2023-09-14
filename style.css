@@ -8,6 +8,10 @@ body{
     justify-content: center;
 }
 
+.border-radius{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 
 .shadow-border{
     box-shadow: 1px 1px 5px 1px black;
@@ -107,6 +111,8 @@ body{
 }
 
 
-
+.hide{
+    display:none
+}
 
 

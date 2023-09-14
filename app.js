@@ -2,6 +2,7 @@
 const invContainer = document.querySelector(".invitees-container");
 const submitBtn = document.querySelector(".add-btn");
 const nameInpt = document.getElementById("name-inpt");
+const hideBtn = document.getElementById("hide-invitees");
 
 function createCard(name){
     let cardContainer = document.createElement("div")
@@ -30,16 +31,19 @@ function createCard(name){
 
 
     btnContainer = document.createElement("div")
-    btnContainer.className="card-buttons"
+    btnContainer.className="card-buttons";
     editBtn = document.createElement("button");
-    editBtn.textContent = "Edit"
-    editBtn.className= "button-style"
+    editBtn.textContent = "Edit";
+    editBtn.className= "button-style";
+    editBtn.className += " edit-btn"
+
     removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remove"
-    removeBtn.className= "button-style"
+    removeBtn.textContent = "Remove";
+    removeBtn.className= "button-style";
+    removeBtn.className += " remove-btn";
     btnContainer.append(editBtn);
     btnContainer.append(removeBtn);
-    cardContainer.append(btnContainer)
+    cardContainer.append(btnContainer);
 
     return cardContainer
 }
@@ -52,3 +56,57 @@ submitBtn.addEventListener("click",()=>{
 
 })
 
+hideBtn.addEventListener("click",()=>{
+    if(hideBtn.checked){
+        hide()
+    }
+    else{
+        show()
+    }
+
+
+})
+
+
+function hide() {
+
+
+    let cards = document.querySelector(".invitees-container").children;
+
+
+
+
+    Array.from(cards).forEach((card) => {
+        let chk = card.querySelector("#confirmed-checkbox");
+
+
+        if (!chk.checked) {
+
+            card.classList.add("hide");
+
+        }
+
+
+
+
+    })
+}
+
+function show() {
+
+
+    let cards = document.querySelector(".invitees-container").children;
+
+
+
+
+    Array.from(cards).forEach((card) => {
+
+
+        card.classList.remove("hide");
+
+
+
+
+    })
+}
